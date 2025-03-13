@@ -5,6 +5,8 @@
  */
 package Vista;
 
+import Controlador.Conexion;
+
 /**
  *
  * @author braya
