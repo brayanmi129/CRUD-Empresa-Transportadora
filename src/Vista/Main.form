@@ -100,7 +100,7 @@
             <StringItem index="1" value="Camiones"/>
             <StringItem index="2" value="Viajes"/>
             <StringItem index="3" value="Conductores - Camiones Autorizados"/>
-            <StringItem index="4" value="Bulto"/>
+            <StringItem index="4" value="Bultos"/>
             <StringItem index="5" value="Accidentes"/>
           </StringArray>
         </Property>

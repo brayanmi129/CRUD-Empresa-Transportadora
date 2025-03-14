@@ -12,7 +12,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 import Controlador.conductorescamionautorizados.consultarcamionesautorizados;
-import Modulo.autorizacion.EliminarAutorizacion;
+import Modelo.autorizacion.EliminarAutorizacion;
 import java.sql.PreparedStatement;
 
 /**
@@ -238,7 +238,7 @@ public class ConductoresCamionesAutorizados extends javax.swing.JFrame {
     }
 
     Conexion conexion = new Conexion();
-    String sql = "SELECT Nombre || ' ' || Apellidos AS NombreCompleto FROM Chofer WHERE CC = ?";
+    String sql = "SELECT Nombre || ' ' || Apellidos AS NombreCompleto FROM Conductor WHERE CC = ?";
     
     try {
         PreparedStatement pst = conexion.establecerConexion().prepareStatement(sql);

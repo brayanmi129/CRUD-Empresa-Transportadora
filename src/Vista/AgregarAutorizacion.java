@@ -7,7 +7,7 @@ package Vista;
 
 import Controlador.Conexion;
 import Controlador.conductorescamionautorizados.consultarcamionesautorizados;
-import Modulo.autorizacion.InsertarAutorizacion;
+import Modelo.autorizacion.InsertarAutorizacion;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
