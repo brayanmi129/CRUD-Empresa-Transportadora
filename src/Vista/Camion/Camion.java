@@ -230,7 +230,7 @@ public class Camion extends javax.swing.JFrame {
         
         if(!Placa.isEmpty() && !Marca.isEmpty() && !Modelo.isEmpty() && !Valor.isEmpty() && !Aseguradora.isEmpty() && !km.isEmpty() && !Chofer.isEmpty()){
             if(kmint>15000){
-                JOptionPane.showMessageDialog(null, "Este camión supera los 15000 kilometros. No se puede agirnar.");
+                JOptionPane.showMessageDialog(null, "Este camión supera los 15000 kilometros. No se puede asignar. Inténtelo de nuevo.");
             }else{
                 Insertar insertar = new Insertar();
                 insertar.Adicionar(Placa, Marca, Modelo, Valor, Aseguradora, km, Chofer);
