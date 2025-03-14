@@ -6,6 +6,7 @@ import Controlador.Viaje.Consultar;
 import Modelo.Viaje.Actualizar;
 import Modelo.Viaje.Eliminar;
 import Modelo.Viaje.Insertar;
+import Vista.Main;
 import javax.swing.JOptionPane;
 
 
@@ -152,7 +153,12 @@ public class Viaje extends javax.swing.JFrame {
             }
         });
 
-        form_viajes_btn_salir.setText("Salir");
+        form_viajes_btn_salir.setText("Volver");
+        form_viajes_btn_salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                form_viajes_btn_salirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -338,6 +344,12 @@ public class Viaje extends javax.swing.JFrame {
             Limpiar();
         }
     }//GEN-LAST:event_form_viajes_btn_eliminarActionPerformed
+
+    private void form_viajes_btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_form_viajes_btn_salirActionPerformed
+        Main main = new Main();
+        main.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_form_viajes_btn_salirActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField form_viajes_CC;

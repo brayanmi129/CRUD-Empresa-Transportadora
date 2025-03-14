@@ -4,6 +4,7 @@ import Controlador.Camion.Consultar;
 import Modelo.Camion.Insertar;
 import Modelo.Camion.Actualizar;
 import Modelo.Camion.Eliminar;
+import Vista.Main;
 import javax.swing.JOptionPane;
 
 //@author Sergio Angel
@@ -107,7 +108,7 @@ public class Camion extends javax.swing.JFrame {
             }
         });
 
-        form_camiones_btn_salir.setText("Salir");
+        form_camiones_btn_salir.setText("Volver");
         form_camiones_btn_salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 form_camiones_btn_salirActionPerformed(evt);
@@ -268,7 +269,9 @@ public class Camion extends javax.swing.JFrame {
     }//GEN-LAST:event_form_camiones_btn_eliminarActionPerformed
 
     private void form_camiones_btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_form_camiones_btn_salirActionPerformed
-        // TODO add your handling code here:
+        Main main = new Main();
+        main.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_form_camiones_btn_salirActionPerformed
 
     private void form_camiones_choferActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_form_camiones_choferActionPerformed

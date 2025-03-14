@@ -24,7 +24,7 @@ public class Consultar {
         //Llevar los titulos a la tabla
         tblConductor.setModel(modelo);
         //Instruccion SQL
-        String sql = "SELECT * FROM Chofer";
+        String sql = "SELECT * FROM Conductor";
         //Vector para los registros}
         String [] datos = new String[5];
         //Variable tipo statement

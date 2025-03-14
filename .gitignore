@@ -2,3 +2,4 @@ build/
 nbproject/
 EmpresaTransporte.db
 EmpresaTransportadora.db
+/dist/
