@@ -1,6 +1,8 @@
-package Controlador.Conductor;
+
+package Controlador.conductorescamionautorizados;
 
 import Controlador.Conexion;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
@@ -9,11 +11,11 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author Cristopher Soto Viloria
+ * @author braya
  */
-public class cConsultar {
-    //Metodo para traer los datos de la base de datos
-    public void mostrarConductor(JTable tblConductor){
+public class consultarcamionesautorizados {
+
+       public void mostrarPlacas(String cc, JTable tblConductor){
         //Objeto de conexion a la base de datos
         Conexion conexion = new Conexion();
         //Onjeto para manejar la tabla
@@ -21,37 +23,35 @@ public class cConsultar {
         //Variable para instrcuccion sql
         String sql = "";
         //Titulos de la tabla
-        modelo.addColumn("CC");
-        modelo.addColumn("Nombre");
-        modelo.addColumn("Apellidos");
-        modelo.addColumn("Sueldo");
-        modelo.addColumn("Antiguedad");
+        modelo.addColumn("ID");
+        modelo.addColumn("Placa");
         //Llevar los titulos a la tabla
         tblConductor.setModel(modelo);
         //Instruccion SQL
-        sql = "SELECT * FROM Chofer";
+        sql = "SELECT ID_Autorizacion , Placa_Vehiculo " +
+"FROM Camiones_autorizados " +
+"WHERE CC_conductor = ?";
         //Vector para los registros}
-        String [] datos = new String[5];
+        String [] datos = new String[2];
         //Variable tipo statement
-        Statement st;
+
         try{
-            st = conexion.establecerConexion().createStatement();
-            ResultSet rs = st.executeQuery(sql);
+            PreparedStatement pst = conexion.establecerConexion().prepareStatement(sql);
+            pst.setInt(1, Integer.parseInt(cc)); // Convierte la selección a entero
             //Recorrer el paquete de datos y manipularlo registro a registro
+             ResultSet rs = pst.executeQuery();
             while(rs.next()){
                 datos[0] = rs.getString(1);
                 datos[1] = rs.getString(2);
-                datos[2] = rs.getString(3);
-                datos[3] = rs.getString(4);
-                datos[4] = rs.getString(5);
                 //Adicionar registro a el modelo
                 modelo.addRow(datos);
             }
             tblConductor.setModel(modelo);
+             rs.close();
+        pst.close();
         }catch(Exception e){
             JOptionPane.showMessageDialog(null,"Error: No se genero el resultado " + e.getMessage());
         }
     }
-    
-    
+      
 }

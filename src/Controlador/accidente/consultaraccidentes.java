@@ -16,9 +16,9 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author braya
  */
-public class consultarAccidente {
+public class consultaraccidentes {
     
-    public void mostrarAccidentes(JTable jTable1){
+    public void mostrarAccidentes( JTable jTable1){
         Conexion conexion = new Conexion();
         DefaultTableModel modelo = new DefaultTableModel();
         
