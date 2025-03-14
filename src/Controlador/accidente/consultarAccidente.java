@@ -33,7 +33,10 @@ public class consultarAccidente {
         
        //Llevar los titulos a la tabla
        jTable1.setModel(modelo);
-       sql = "SELECT * FROM Accidente";
+       sql = "SELECT A.ID_Accidente, A.Fecha, (C.Nombre || ' ' || C.Apellidos) AS Conductor, \n" +
+"       A.Placa, A.Costo_danos, A.Descripcion\n" +
+"FROM Accidente A\n" +
+"JOIN Chofer C ON A.CC = C.CC";
        //crear un arreglo para guardar 
        String [] datos = new String[7];
        //Crear una variable tipo Statement

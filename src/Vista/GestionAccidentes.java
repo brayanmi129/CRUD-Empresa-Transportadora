@@ -6,6 +6,10 @@
 package Vista;
 
 import Controlador.accidente.consultarAccidente;
+import Modelo.Accidente.Actualizar;
+import Modelo.Accidente.Eliminar;
+import Modelo.Accidente.Insertar;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -21,6 +25,15 @@ public class GestionAccidentes extends javax.swing.JFrame {
         consultarAccidente consulta = new consultarAccidente();
         consulta.mostrarAccidentes(jTable1);
         
+    }
+    
+        public void Limpiar(){
+           from_accidentes_ID.setText("");
+        form_accidente_fecha.setText("");
+        form_accidente_conductor.setText("");
+        form_accidente_vehiculo.setText("");
+        form_accidente_costo.setText("");
+        form_accidente_descri.setText("");
     }
 
     /**
@@ -49,7 +62,7 @@ public class GestionAccidentes extends javax.swing.JFrame {
         form_accidente_conductor = new javax.swing.JTextField();
         form_accidente_costo = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        BtnActualizar = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         Volver = new javax.swing.JButton();
 
@@ -76,6 +89,7 @@ public class GestionAccidentes extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable1);
 
+        from_accidentes_ID.setEditable(false);
         from_accidentes_ID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 from_accidentes_IDActionPerformed(evt);
@@ -129,10 +143,10 @@ public class GestionAccidentes extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setText("Actualizar");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        BtnActualizar.setText("Actualizar");
+        BtnActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                BtnActualizarActionPerformed(evt);
             }
         });
 
@@ -155,13 +169,8 @@ public class GestionAccidentes extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 407, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(165, 165, 165)
-                        .addComponent(jLabel1)))
+                .addGap(165, 165, 165)
+                .addComponent(jLabel1)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(21, 21, 21)
@@ -185,29 +194,30 @@ public class GestionAccidentes extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Volver, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BtnActualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(16, 16, 16)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 407, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(70, 70, 70)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(from_accidentes_ID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel1)))
+                .addGap(20, 20, 20)
+                .addComponent(jLabel1)
+                .addGap(28, 28, 28)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(from_accidentes_ID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BtnActualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(form_accidente_fecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -271,14 +281,63 @@ public class GestionAccidentes extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        String conductor,fecha,placa, Descripccion, costo;
+        fecha = form_accidente_fecha.getText().toString();
+        conductor = form_accidente_conductor.getText();
+        placa = form_accidente_vehiculo.getText().toString();
+        costo = form_accidente_costo.getText().toString();
+        Descripccion = form_accidente_descri.getText().toString();
+        
+        int conductorCc= Integer.parseInt(conductor); // Convertir a int
+        float costofloat = Float.parseFloat(costo); // Convertir a float
+        
+        if(!fecha.isEmpty() && !conductor.isEmpty() && !costo.isEmpty() && !Descripccion.isEmpty() && !placa.isEmpty()){
+            Insertar insertar = new Insertar();
+            insertar.Adicionar(fecha, conductorCc, placa, costofloat, Descripccion);
+            consultarAccidente consulta = new consultarAccidente();
+            consulta.mostrarAccidentes(jTable1);
+            Limpiar();
+        }else{
+            JOptionPane.showMessageDialog(null, "Todos los campos deben estar llenos.");
+        }
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void BtnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnActualizarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+        String idf, conductor,fecha,placa, Descripccion, costo;
+        idf = from_accidentes_ID.getText().toString();
+        fecha = form_accidente_fecha.getText().toString();
+        conductor = form_accidente_conductor.getText();
+        placa = form_accidente_vehiculo.getText().toString();
+        costo = form_accidente_costo.getText().toString();
+        Descripccion = form_accidente_descri.getText().toString();
+        
+        int conductorCc= Integer.parseInt(conductor); // Convertir a int
+        float costofloat = Float.parseFloat(costo); // Convertir a float
+        int Idint = Integer.parseInt(idf);
+        
+        Actualizar actualizar = new Actualizar();
+        actualizar.Actualizar(Idint, fecha ,conductorCc ,placa , costofloat , Descripccion);
+        consultarAccidente consulta = new consultarAccidente();
+        consulta.mostrarAccidentes(jTable1);
+        Limpiar();
+        
+    }//GEN-LAST:event_BtnActualizarActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
+                String idf = from_accidentes_ID.getText().toString();
+        
+        int IntID = Integer.parseInt(idf);
+        int respuesta = JOptionPane.showConfirmDialog(null,"Esta segudo de eliminar accidente" + idf);
+        if(respuesta == 0){
+        Eliminar eliminar = new Eliminar();
+        eliminar.Eliminar(IntID);
+        consultarAccidente consulta = new consultarAccidente();
+        consulta.mostrarAccidentes(jTable1);
+        Limpiar();
+        }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void VolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverActionPerformed
@@ -325,6 +384,7 @@ public class GestionAccidentes extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnActualizar;
     private javax.swing.JButton Volver;
     private javax.swing.JTextField form_accidente_conductor;
     private javax.swing.JTextField form_accidente_costo;
@@ -333,7 +393,6 @@ public class GestionAccidentes extends javax.swing.JFrame {
     private javax.swing.JTextField form_accidente_vehiculo;
     private javax.swing.JTextField from_accidentes_ID;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
