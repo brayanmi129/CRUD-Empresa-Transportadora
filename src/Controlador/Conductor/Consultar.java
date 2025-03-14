@@ -11,7 +11,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Cristopher Soto Viloria
  */
-public class cConsultar {
+public class Consultar {
     //Metodo para traer los datos de la base de datos
     public void mostrarConductor(JTable tblConductor){
         //Objeto de conexion a la base de datos

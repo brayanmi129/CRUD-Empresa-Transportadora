@@ -6,7 +6,7 @@
 package Vista;
 
 import Controlador.Autorizacion.ConsultaAutorizaciones;
-import Controlador.Conductor.cConsultar;
+import Controlador.Conductor.Consultar;
 import Controlador.Conexion;
 import java.sql.ResultSet;
 import java.sql.Statement;

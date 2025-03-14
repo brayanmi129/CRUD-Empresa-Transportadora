@@ -6,6 +6,7 @@
 package Vista;
 
 import Controlador.Conexion;
+import Vista.Accidente.Accidente;
 import Vista.Bulto.Bulto;
 import Vista.Conductor.Conductor;
 
@@ -117,27 +118,17 @@ public class Main extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void AceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarActionPerformed
-         String seleccion = (String) jComboBox1.getSelectedItem();
-         // Verificar el valor seleccionado y abrir la ventana correspondiente
-    if ("Accidentes".equals(seleccion)) {
-        GestionAccidentes gestionaccidentes = new GestionAccidentes();
-        gestionaccidentes.setVisible(true);
-    } 
-    
-    if ("Bultos".equals(seleccion)){
-        Bulto bulto = new Bulto();
-        bulto.setVisible(true);
-    }
-    
-    if ("Conductores".equals(seleccion)){
-        Conductor conductor = new Conductor();
-        conductor.setVisible(true);
-    }
-
-    // Cerrar la ventana actual
-    this.dispose();
-        
-    
+        String seleccion = (String) jComboBox1.getSelectedItem();
+        // Verificar el valor seleccionado y abrir la ventana correspondiente
+        switch(seleccion){
+            case "Accidentes":
+                this.dispose();
+                Accidente gestionaccidentes = new Accidente();
+                gestionaccidentes.setVisible(true);
+                break;
+            case "Bultos":
+                break;
+        }    
     }//GEN-LAST:event_AceptarActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

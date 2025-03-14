@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
  *
  * @author Cristopher Soto Viloria
  */
-public class cEliminar {
+public class Eliminar {
     public void eliminarConductor(int cc){
         //Conexion con la base de datos
         Conexion conexion = new Conexion();

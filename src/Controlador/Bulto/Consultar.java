@@ -11,7 +11,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Cristopher Soto Viloria
  */
-public class cConsultar {
+public class Consultar {
     //Metodo para traer los datos y crear la tabla
     public void mostrarBultos(JTable tblBultos){
         //Conexion con la base de datos

@@ -3,27 +3,28 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Vista;
+package Vista.Accidente;
 
-import Controlador.accidente.consultarAccidente;
+import Controlador.Accidente.Consultar;
 import Modelo.Accidente.Actualizar;
 import Modelo.Accidente.Eliminar;
 import Modelo.Accidente.Insertar;
+import Vista.Main;
 import javax.swing.JOptionPane;
 
 /**
  *
  * @author brayan
  */
-public class GestionAccidentes extends javax.swing.JFrame {
+public class Accidente extends javax.swing.JFrame {
 
     /**
      * Creates new form GestionAcccidentes
      */
-    public GestionAccidentes() {
+    public Accidente() {
         initComponents();
-        consultarAccidente consulta = new consultarAccidente();
-        consulta.mostrarAccidentes(jTable1);
+        Consultar consultar = new Consultar();
+        consultar.mostrarAccidentes(jTable1);
         
     }
     
@@ -294,8 +295,8 @@ public class GestionAccidentes extends javax.swing.JFrame {
         if(!fecha.isEmpty() && !conductor.isEmpty() && !costo.isEmpty() && !Descripccion.isEmpty() && !placa.isEmpty()){
             Insertar insertar = new Insertar();
             insertar.Adicionar(fecha, conductorCc, placa, costofloat, Descripccion);
-            consultarAccidente consulta = new consultarAccidente();
-            consulta.mostrarAccidentes(jTable1);
+            Consultar consultar = new Consultar();
+            consultar.mostrarAccidentes(jTable1);
             Limpiar();
         }else{
             JOptionPane.showMessageDialog(null, "Todos los campos deben estar llenos.");
@@ -319,8 +320,8 @@ public class GestionAccidentes extends javax.swing.JFrame {
         
         Actualizar actualizar = new Actualizar();
         actualizar.Actualizar(Idint, fecha ,conductorCc ,placa , costofloat , Descripccion);
-        consultarAccidente consulta = new consultarAccidente();
-        consulta.mostrarAccidentes(jTable1);
+        Consultar consultar = new Consultar();
+        consultar.mostrarAccidentes(jTable1);
         Limpiar();
         
     }//GEN-LAST:event_BtnActualizarActionPerformed
@@ -334,8 +335,8 @@ public class GestionAccidentes extends javax.swing.JFrame {
         if(respuesta == 0){
         Eliminar eliminar = new Eliminar();
         eliminar.Eliminar(IntID);
-        consultarAccidente consulta = new consultarAccidente();
-        consulta.mostrarAccidentes(jTable1);
+        Consultar consultar = new Consultar();
+        consultar.mostrarAccidentes(jTable1);
         Limpiar();
         }
     }//GEN-LAST:event_jButton4ActionPerformed
@@ -364,21 +365,23 @@ public class GestionAccidentes extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(GestionAccidentes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Accidente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(GestionAccidentes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Accidente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(GestionAccidentes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Accidente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(GestionAccidentes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Accidente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new GestionAccidentes().setVisible(true);
+                new Accidente().setVisible(true);
             }
         });
     }

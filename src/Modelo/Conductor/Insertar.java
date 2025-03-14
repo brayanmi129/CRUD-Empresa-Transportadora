@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
  *
  * @author Cristopher Soto Viloria
  */
-public class cInsertar {
+public class Insertar {
     public void adicionarConductor(String nombre, String apellidos, String sueldo, String antiguedad){
         //Conexion con la base de datos
         Conexion conexion = new Conexion();

@@ -5,10 +5,10 @@
  */
 package Vista.Bulto;
 
-import Controlador.Bulto.cConsultar;
-import Modelo.Bulto.cActualizar;
-import Modelo.Bulto.cEliminar;
-import Modelo.Bulto.cInsertar;
+import Controlador.Bulto.Consultar;
+import Modelo.Bulto.Actualizar;
+import Modelo.Bulto.Eliminar;
+import Modelo.Bulto.Insertar;
 import Vista.Main;
 import javax.swing.JOptionPane;
 
@@ -23,7 +23,7 @@ public class Bulto extends javax.swing.JFrame {
      */
     public Bulto() {
         initComponents();
-        cConsultar consulta = new cConsultar();
+        Consultar consulta = new Consultar();
         consulta.mostrarBultos(tblBulto);
     }
     public void Limpiar(){
@@ -209,9 +209,9 @@ public class Bulto extends javax.swing.JFrame {
         valort = txtValor_envio.getText().toString();
         
         if (!remitente.isEmpty() && !destinatario.isEmpty() && !valora.isEmpty() && !valort.isEmpty()){
-            cInsertar insertar = new cInsertar();
+            Insertar insertar = new Insertar();
             insertar.adicionarBulto(remitente, destinatario, valora, valort);
-            cConsultar consulta = new cConsultar();
+            Consultar consulta = new Consultar();
             consulta.mostrarBultos(tblBulto);
             Limpiar();
         }else{
@@ -238,9 +238,9 @@ public class Bulto extends javax.swing.JFrame {
         int ID_bultoint = Integer.parseInt(ID_Bultof);
         int respuesta = JOptionPane.showConfirmDialog(null, "¿Esta seguro que desa eliminar este registro?");
         if (respuesta == 0){
-            cEliminar eliminar  = new cEliminar();
+            Eliminar eliminar  = new Eliminar();
             eliminar.eliminarBulto(ID_bultoint);
-            cConsultar consulta = new cConsultar();
+            Consultar consulta = new Consultar();
             consulta.mostrarBultos(tblBulto);
             Limpiar();
         }
@@ -255,9 +255,9 @@ public class Bulto extends javax.swing.JFrame {
         valorp = txtValor_envio.getText().toString();
         ID_Bulto = txtID_Bulto.getText().toString();
         int ID_Bultoint = Integer.parseInt(ID_Bulto);
-        cActualizar actualizar = new cActualizar();
+        Actualizar actualizar = new Actualizar();
         actualizar.actualizarBulto(ID_Bultoint, remitente, destinatario, valora, valorp);
-        cConsultar consulta = new cConsultar();
+        Consultar consulta = new Consultar();
         consulta.mostrarBultos(tblBulto);
         Limpiar();
     }//GEN-LAST:event_btnActualizarActionPerformed

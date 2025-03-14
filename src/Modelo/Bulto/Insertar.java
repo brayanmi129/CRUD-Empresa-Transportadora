@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
  *
  * @author Cristopher Soto Viloria
  */
-public class cInsertar {
+public class Insertar {
     //Metodo para adicionar datos
     public void adicionarBulto(String remitentef, String destinatariof, String valoraf, String valortf){
         //Conexion con la base de datos

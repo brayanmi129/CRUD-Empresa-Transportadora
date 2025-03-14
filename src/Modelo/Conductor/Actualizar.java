@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
  *
  * @author Cristopher Soto Viloria
  */
-public class cActualizar {
+public class Actualizar {
     public void actualizarConductor(int cc, String nombre, String apellidos, String sueldo, String antiguedad){
         //Conexion con la base de datos
         Conexion conexion = new Conexion();

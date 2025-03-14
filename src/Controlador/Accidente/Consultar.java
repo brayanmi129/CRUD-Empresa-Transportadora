@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Controlador.accidente;
+package Controlador.Accidente;
 
 import Controlador.Conexion;
 import java.sql.ResultSet;
@@ -16,7 +16,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author braya
  */
-public class consultarAccidente {
+public class Consultar {
     
     public void mostrarAccidentes(JTable jTable1){
         Conexion conexion = new Conexion();
@@ -33,10 +33,7 @@ public class consultarAccidente {
         
        //Llevar los titulos a la tabla
        jTable1.setModel(modelo);
-       sql = "SELECT A.ID_Accidente, A.Fecha, (C.Nombre || ' ' || C.Apellidos) AS Conductor, \n" +
-"       A.Placa, A.Costo_danos, A.Descripcion\n" +
-"FROM Accidente A\n" +
-"JOIN Chofer C ON A.CC = C.CC";
+       sql = "SELECT * FROM Accidente";
        //crear un arreglo para guardar 
        String [] datos = new String[7];
        //Crear una variable tipo Statement

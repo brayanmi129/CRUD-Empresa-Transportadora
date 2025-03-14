@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
  *
  * @author Cristopher Soto Viloria
  */
-public class cEliminar {
+public class Eliminar {
     public void eliminarBulto(int ID_Bulto){
         //Conexion con la base de datos
         Conexion conexion = new Conexion();

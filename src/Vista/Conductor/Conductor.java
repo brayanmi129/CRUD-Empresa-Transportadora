@@ -5,10 +5,10 @@
  */
 package Vista.Conductor;
 
-import Controlador.Conductor.cConsultar;
-import Modelo.Conductor.cActualizar;
-import Modelo.Conductor.cEliminar;
-import Modelo.Conductor.cInsertar;
+import Controlador.Conductor.Consultar;
+import Modelo.Conductor.Actualizar;
+import Modelo.Conductor.Eliminar;
+import Modelo.Conductor.Insertar;
 import Vista.Main;
 import javax.swing.JOptionPane;
 
@@ -23,7 +23,7 @@ public class Conductor extends javax.swing.JFrame {
      */
     public Conductor() {
         initComponents();
-        cConsultar consultar = new cConsultar();
+        Consultar consultar = new Consultar();
         consultar.mostrarConductor(tblConductor);
     }
     public void Limpiar(){
@@ -217,9 +217,9 @@ public class Conductor extends javax.swing.JFrame {
         antiguedad = txtAntiguedad.getText().toString();
         
         if (!nombre.isEmpty() && !apellidos.isEmpty() && !sueldo.isEmpty() && !antiguedad.isEmpty()) {
-            cInsertar insertar = new cInsertar();
+            Insertar insertar = new Insertar();
             insertar.adicionarConductor(nombre, apellidos, sueldo, antiguedad);
-            cConsultar consultar = new cConsultar();
+            Consultar consultar = new Consultar();
             consultar.mostrarConductor(tblConductor);
             Limpiar();
         }else{
@@ -236,9 +236,9 @@ public class Conductor extends javax.swing.JFrame {
         antiguedad = txtAntiguedad.getText().toString();
         cc = txtCc.getText().toString();
         int ccint = Integer.parseInt(cc);
-        cActualizar actualizar = new cActualizar();
+        Actualizar actualizar = new Actualizar();
         actualizar.actualizarConductor(ccint, nombre, apellidos, sueldo, antiguedad);
-        cConsultar consultar = new cConsultar();
+        Consultar consultar = new Consultar();
         consultar.mostrarConductor(tblConductor);
         Limpiar();
     }//GEN-LAST:event_btnActualizarActionPerformed
@@ -250,9 +250,9 @@ public class Conductor extends javax.swing.JFrame {
         int ccint = Integer.parseInt(cc);
         int respuesta = JOptionPane.showConfirmDialog(null, "¿Esta seguro de eliminare este registro?");
         if (respuesta == 0){
-            cEliminar eliminar = new cEliminar();
+            Eliminar eliminar = new Eliminar();
             eliminar.eliminarConductor(ccint);
-            cConsultar consultar = new cConsultar();
+            Consultar consultar = new Consultar();
             consultar.mostrarConductor(tblConductor);
             Limpiar();
         }
