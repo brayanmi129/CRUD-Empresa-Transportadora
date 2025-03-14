@@ -20,9 +20,9 @@ public class Conexion {
             Class.forName("org.sqlite.JDBC");
             //Abrir conexion
             conectar = DriverManager.getConnection(cadena_conexion);
-            System.out.println("Conexion Exitosa");
+            System.out.println("Conexión exitosa con la base de datos.");
         }catch(Exception e){
-            JOptionPane.showMessageDialog(null, "Error: No se realizo la conexion " + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error: No se realizó la conexión. Info: " + e.getMessage());
         }
         return conectar;
     }

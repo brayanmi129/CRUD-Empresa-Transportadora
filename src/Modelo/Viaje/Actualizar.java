@@ -9,8 +9,7 @@ import javax.swing.JOptionPane;
 public class Actualizar{
    public void Actualizar(int ID_Viaje, String CC, String Placa, String Lugar_destino, String Lugar_salida, String Fecha_salida, String Fecha_llegada, String ID_Bulto){
        Conexion conexion = new Conexion();
-       String sql="";
-       sql = "UPDATE Viaje SET ID_Viaje = ?, CC = ?, Placa = ?, Lugar_destino = ?, Lugar_salida = ?, Fecha_salida = ?, Fecha_llegada = ?, ID_Bulto = ? WHERE ID_Viaje = ?";
+       String sql = "UPDATE Viaje SET ID_Viaje = ?, CC = ?, Placa = ?, Lugar_destino = ?, Lugar_salida = ?, Fecha_salida = ?, Fecha_llegada = ?, ID_Bulto = ? WHERE ID_Viaje = ?";
        try{
            PreparedStatement pst = conexion.establecerConexion().prepareStatement(sql);
            pst.setInt(1, ID_Viaje);

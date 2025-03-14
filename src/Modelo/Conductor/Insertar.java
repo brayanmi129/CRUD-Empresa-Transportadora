@@ -1,26 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Modelo.Conductor;
 
 import Controlador.Conexion;
 import java.sql.PreparedStatement;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Cristopher Soto Viloria
- */
+//@author Cristopher Soto Viloria
 public class Insertar {
     public void adicionarConductor(String nombre, String apellidos, String sueldo, String antiguedad){
         //Conexion con la base de datos
         Conexion conexion = new Conexion();
-        //Variable sql
-        String sql = "";
         //Instruccion sql
-        sql = "INSERT INTO Conductor (Nombre, Apellidos, Sueldo ,Antiguedad) VALUES (?,?,?,?)";
+        String sql = "INSERT INTO Conductor (Nombre, Apellidos, Sueldo ,Antiguedad) VALUES (?,?,?,?)";
         try {
             PreparedStatement pst = conexion.establecerConexion().prepareStatement(sql);
             pst.setString(1, nombre);
@@ -28,9 +18,9 @@ public class Insertar {
             pst.setString(3, sueldo);
             pst.setString(4, antiguedad);
             pst.executeUpdate();
-            JOptionPane.showMessageDialog(null, "El registro se adiciono correctamente.");
+            JOptionPane.showMessageDialog(null, "El registro se adicionó correctamente.");
         }catch(Exception e){
-            JOptionPane.showMessageDialog(null,"Error!!.. El registro NO se adiciono" + e.getMessage());
+            JOptionPane.showMessageDialog(null,"Error: Hubo un problema con el registro. Info: " + e.getMessage());
         }
     }
 }

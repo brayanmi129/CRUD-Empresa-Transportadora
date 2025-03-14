@@ -10,8 +10,7 @@ import javax.swing.JOptionPane;
 public class Insertar {
     public void Adicionar(String CC, String Placa, String LugarDestino, String LugarSalida, String FechaSalida, String FechaLlegada, String ID_Bulto){
         Conexion conexion = new Conexion();
-        String sql = "";
-        sql = "INSERT INTO Viaje (CC, Placa, Lugar_destino, Lugar_salida, Fecha_salida, Fecha_llegada, ID_Bulto) VALUES (?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO Viaje (CC, Placa, Lugar_destino, Lugar_salida, Fecha_salida, Fecha_llegada, ID_Bulto) VALUES (?,?,?,?,?,?,?)";
         
         try{
             PreparedStatement pst = conexion.establecerConexion().prepareStatement(sql);
@@ -26,7 +25,7 @@ public class Insertar {
             JOptionPane.showMessageDialog(null, "El registro se realizó correctamente.");
         }
         catch(Exception e){
-            JOptionPane.showMessageDialog(null, "Error: No se pudo insertar en la tabla T_Alumnos. Info: "+e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error: No se pudo realizar el registro. Info: "+e.getMessage());
         }
     }
 }

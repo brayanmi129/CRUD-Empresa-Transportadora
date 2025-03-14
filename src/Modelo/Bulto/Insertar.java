@@ -4,19 +4,14 @@ import Controlador.Conexion;
 import java.sql.PreparedStatement;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Cristopher Soto Viloria
- */
+//@author Cristopher Soto Viloria
 public class Insertar {
     //Metodo para adicionar datos
     public void adicionarBulto(String remitentef, String destinatariof, String valoraf, String valortf){
         //Conexion con la base de datos
         Conexion conexion = new Conexion();
-        //Variable SQL
-        String sql = "";
         //Instruccion sql
-        sql = "INSERT INTO Bulto(Remitente, Destinatario, Valor_Asegurado, Precio_pagado_por_traslado) VALUES (?,?,?,?)";
+        String sql = "INSERT INTO Bulto(Remitente, Destinatario, Valor_Asegurado, Precio_pagado_por_traslado) VALUES (?,?,?,?)";
         try{
             //Preparar instruccion para llevarla a la BD
             PreparedStatement pst = conexion.establecerConexion().prepareStatement(sql);
@@ -27,9 +22,9 @@ public class Insertar {
             pst.setString(4, valortf);
             //Ejecutat instruccion sql
             pst.execute();
-            JOptionPane.showMessageDialog(null, "El registro se adiciono correctamente.");
+            JOptionPane.showMessageDialog(null, "El registro se realizó correctamente.");
         }catch(Exception e){
-            JOptionPane.showMessageDialog(null,"Error!! El registro NO se adiciono " + e.getMessage());
+            JOptionPane.showMessageDialog(null,"Error: Hubo un problema al insertar el registro. Info: " + e.getMessage());
         }
     }
 }

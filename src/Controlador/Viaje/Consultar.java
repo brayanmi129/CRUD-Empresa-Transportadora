@@ -12,7 +12,6 @@ public class Consultar {
         Conexion conexion = new Conexion();
         DefaultTableModel modelo = new DefaultTableModel();
         
-        String sql = "";
         modelo.addColumn("ID_Viaje");
         modelo.addColumn("CC");
         modelo.addColumn("Placa");
@@ -24,7 +23,7 @@ public class Consultar {
         
         table.setModel(modelo);
         
-        sql = "SELECT * FROM Viaje";
+        String sql = "SELECT * FROM Viaje";
         
         String [] datos = new String[7];
         
@@ -44,7 +43,7 @@ public class Consultar {
             }
             table.setModel(modelo);
         }catch(Exception e){
-            JOptionPane.showMessageDialog(null, "Error: No se pudieron traer los datos de la base de datos. Info: "+e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error: No se pudo traer la información de la base de datos. Info: "+e.getMessage());
         }
     }
 }

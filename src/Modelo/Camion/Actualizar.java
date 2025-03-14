@@ -9,8 +9,7 @@ import javax.swing.JOptionPane;
 public class Actualizar{
    public void Actualizar(String Placa, String Marca, String Modelo, String Valor, String Aseguradora, String km, String Chofer){
        Conexion conexion = new Conexion();
-       String sql="";
-       sql = "UPDATE Camion SET Marca = ?, Modelo = ?, Valor_de_adquisicion = ?, Compania_aseguradora = ?, Kilometraje_recorrido = ?, Chofer = ? WHERE Placa = ?";
+       String sql = "UPDATE Camion SET Marca = ?, Modelo = ?, Valor_de_adquisicion = ?, Compania_aseguradora = ?, Kilometraje_recorrido = ?, Chofer = ? WHERE Placa = ?";
        try{
             PreparedStatement pst = conexion.establecerConexion().prepareStatement(sql);
             pst.setString(1, Marca);
@@ -23,7 +22,7 @@ public class Actualizar{
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "El registro se actualizó correctamente.");
        }catch(Exception e){
-            JOptionPane.showMessageDialog(null, "Error: No se pudo realizar la actualización. Info: "+e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error: No se pudo actualizar el registro. Info: "+e.getMessage());
        }
    } 
 }

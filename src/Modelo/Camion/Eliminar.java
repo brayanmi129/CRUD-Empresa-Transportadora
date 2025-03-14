@@ -9,8 +9,7 @@ import javax.swing.JOptionPane;
 public class Eliminar {
    public void Eliminar(String Placa){
        Conexion conexion = new Conexion();
-       String sql = "";
-       sql = "DELETE FROM Camion WHERE Placa = ?";
+       String sql = "DELETE FROM Camion WHERE Placa = ?";
        try{
            PreparedStatement pst = conexion.establecerConexion().prepareStatement(sql);
            pst.setString(1, Placa);

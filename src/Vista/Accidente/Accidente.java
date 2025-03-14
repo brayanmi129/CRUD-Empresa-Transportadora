@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Vista.Accidente;
 
 import Controlador.Accidente.Consultar;
@@ -12,24 +7,17 @@ import Modelo.Accidente.Insertar;
 import Vista.Main;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author brayan
- */
+//@author brayan
 public class Accidente extends javax.swing.JFrame {
-
-    /**
-     * Creates new form GestionAcccidentes
-     */
     public Accidente() {
         initComponents();
+        setLocationRelativeTo(null);
         Consultar consultar = new Consultar();
         consultar.mostrarAccidentes(jTable1);
-        
     }
     
-        public void Limpiar(){
-           from_accidentes_ID.setText("");
+    public void Limpiar(){
+        from_accidentes_ID.setText("");
         form_accidente_fecha.setText("");
         form_accidente_conductor.setText("");
         form_accidente_vehiculo.setText("");
@@ -328,7 +316,7 @@ public class Accidente extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-                String idf = from_accidentes_ID.getText().toString();
+        String idf = from_accidentes_ID.getText().toString();
         
         int IntID = Integer.parseInt(idf);
         int respuesta = JOptionPane.showConfirmDialog(null,"Esta segudo de eliminar accidente" + idf);
@@ -347,44 +335,6 @@ public class Accidente extends javax.swing.JFrame {
         menu.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_VolverActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Accidente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Accidente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Accidente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Accidente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Accidente().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnActualizar;

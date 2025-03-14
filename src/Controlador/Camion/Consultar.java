@@ -12,7 +12,6 @@ public class Consultar {
         Conexion conexion = new Conexion();
         DefaultTableModel modelo = new DefaultTableModel();
         
-        String sql = "";
         modelo.addColumn("Placa");
         modelo.addColumn("Marca");
         modelo.addColumn("Modelo");
@@ -23,7 +22,7 @@ public class Consultar {
         
         table.setModel(modelo);
         
-        sql = "SELECT * FROM Camion";
+        String sql = "SELECT * FROM Camion";
         
         String [] datos = new String[7];
         

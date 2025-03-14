@@ -1,26 +1,18 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Vista;
 
-import Controlador.Conexion;
 import Vista.Accidente.Accidente;
 import Vista.Bulto.Bulto;
+import Vista.Camion.Camion;
 import Vista.Conductor.Conductor;
+import Vista.ConductoresCamionesAutorizados.ConductoresCamionesAutorizados;
+import Vista.Viaje.Viaje;
 
-/**
- *
- * @author braya
- */
+//@author braya
+
 public class Main extends javax.swing.JFrame {
-
-    /**
-     * Creates new form Menu
-     */
     public Main() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -127,6 +119,29 @@ public class Main extends javax.swing.JFrame {
                 gestionaccidentes.setVisible(true);
                 break;
             case "Bultos":
+                this.dispose();
+                Bulto bulto = new Bulto();
+                bulto.setVisible(true);
+                break;
+            case "Camiones":
+                this.dispose();
+                Camion camion = new Camion();
+                camion.setVisible(true);
+                break;
+            case "Conductores":
+                this.dispose();
+                Conductor conductor = new Conductor();
+                conductor.setVisible(true);
+                break;
+            case "Viajes":
+                this.dispose();
+                Viaje viaje = new Viaje();
+                viaje.setVisible(true);
+                break;
+            case "Conductores - Camiones Autorizados":
+                this.dispose();
+                ConductoresCamionesAutorizados cca = new ConductoresCamionesAutorizados();
+                cca.setVisible(true);
                 break;
         }    
     }//GEN-LAST:event_AceptarActionPerformed

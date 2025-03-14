@@ -4,18 +4,13 @@ import Controlador.Conexion;
 import java.sql.PreparedStatement;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Cristopher Soto Viloria
- */
+//@author Cristopher Soto Viloria
 public class Actualizar {
     public void actualizarConductor(int cc, String nombre, String apellidos, String sueldo, String antiguedad){
         //Conexion con la base de datos
         Conexion conexion = new Conexion();
-        //Variable SQL
-        String sql = "";
         //Instruccion SQL
-        sql = "UPDATE Conductor SET Nombre = ?, Apellidos = ?, Sueldo = ?, Antiguedad = ? WHERE CC = ?";
+        String sql = "UPDATE Conductor SET Nombre = ?, Apellidos = ?, Sueldo = ?, Antiguedad = ? WHERE CC = ?";
         //Preparar ejecucion de la instruccion
         try{
             PreparedStatement pst = conexion.establecerConexion().prepareStatement(sql);
@@ -25,9 +20,9 @@ public class Actualizar {
             pst.setString(4, antiguedad);
             pst.setInt(5, cc);
             pst.executeUpdate();
-            JOptionPane.showMessageDialog(null, "El registro se actualizo correctamente");
+            JOptionPane.showMessageDialog(null, "El registro se actualizó correctamente");
         }catch(Exception e){
-            JOptionPane.showMessageDialog(null, "Error no se pudo actualizar el registro" + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error: No se pudo actualizar el registro. Info: " + e.getMessage());
         }
 
     }

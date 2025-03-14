@@ -7,10 +7,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author Cristopher Soto Viloria
- */
+//@author Cristopher Soto Viloria
 public class Consultar {
     //Metodo para traer los datos y crear la tabla
     public void mostrarBultos(JTable tblBultos){
@@ -18,8 +15,6 @@ public class Consultar {
         Conexion conexion = new Conexion();
         //Objeto para manejar la tabla
         DefaultTableModel modelo = new DefaultTableModel();
-        //Instruccion SQL
-        String sql = "";
         //Titulos de la tabla
         modelo.addColumn("ID_Bulto");
         modelo.addColumn("Remitente");
@@ -29,7 +24,7 @@ public class Consultar {
         //Colocar los titulos en la tabla del modelo
         tblBultos.setModel(modelo);
         //Instruccion SQL
-        sql = "SELECT * FROM Bulto";
+        String sql = "SELECT * FROM Bulto";
         //Vector para guardar los registros
         String [] datos  = new String[5];
         //Variable Statement
@@ -48,7 +43,7 @@ public class Consultar {
             }
             tblBultos.setModel(modelo);
         }catch(Exception e){
-            JOptionPane.showMessageDialog(null,"Error: No se genero el resultado" + e.getMessage());
+            JOptionPane.showMessageDialog(null,"Error: No se pudo traer la información de la base de datos. Info: " + e.getMessage());
         }
     }
 }

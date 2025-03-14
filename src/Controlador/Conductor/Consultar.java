@@ -7,10 +7,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author Cristopher Soto Viloria
- */
+//@author Cristopher Soto Viloria
 public class Consultar {
     //Metodo para traer los datos de la base de datos
     public void mostrarConductor(JTable tblConductor){
@@ -18,8 +15,6 @@ public class Consultar {
         Conexion conexion = new Conexion();
         //Onjeto para manejar la tabla
         DefaultTableModel modelo = new DefaultTableModel();
-        //Variable para instrcuccion sql
-        String sql = "";
         //Titulos de la tabla
         modelo.addColumn("CC");
         modelo.addColumn("Nombre");
@@ -29,7 +24,7 @@ public class Consultar {
         //Llevar los titulos a la tabla
         tblConductor.setModel(modelo);
         //Instruccion SQL
-        sql = "SELECT * FROM Chofer";
+        String sql = "SELECT * FROM Chofer";
         //Vector para los registros}
         String [] datos = new String[5];
         //Variable tipo statement
@@ -49,7 +44,7 @@ public class Consultar {
             }
             tblConductor.setModel(modelo);
         }catch(Exception e){
-            JOptionPane.showMessageDialog(null,"Error: No se genero el resultado " + e.getMessage());
+            JOptionPane.showMessageDialog(null,"Error: No se pudo traer la información de la base de datos. Info: " + e.getMessage());
         }
     }
 }

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Controlador.Accidente;
 
 import Controlador.Conexion;
@@ -12,17 +7,12 @@ import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author braya
- */
-public class Consultar {
-    
-    public void mostrarAccidentes(JTable jTable1){
+//@author braya
+public class Consultar {  
+    public void mostrarAccidentes(JTable table){
         Conexion conexion = new Conexion();
         DefaultTableModel modelo = new DefaultTableModel();
         
-        String sql = "";
         //Titulos de la tabla
         modelo.addColumn("Id");
         modelo.addColumn("Fecha");
@@ -32,8 +22,8 @@ public class Consultar {
         modelo.addColumn("Descripccion");
         
        //Llevar los titulos a la tabla
-       jTable1.setModel(modelo);
-       sql = "SELECT * FROM Accidente";
+       table.setModel(modelo);
+       String sql = "SELECT * FROM Accidente";
        //crear un arreglo para guardar 
        String [] datos = new String[7];
        //Crear una variable tipo Statement
@@ -53,9 +43,9 @@ public class Consultar {
                modelo.addRow(datos);
                
            }
-           jTable1.setModel(modelo);
+           table.setModel(modelo);
        }catch(Exception e){
-           JOptionPane.showMessageDialog(null, "Error... No se genero resultado deñ select " + e.getMessage());
+           JOptionPane.showMessageDialog(null, "Error: No se pudo traer la información de la base de datos. Info: " + e.getMessage());
            
        }
     }
