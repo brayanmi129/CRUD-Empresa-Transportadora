@@ -5,7 +5,7 @@
  */
 package Vista;
 
-import Controlador.accidente.consultarAccidente;
+import Controlador.accidente.consultaraccidentes;
 import Modelo.Accidente.Actualizar;
 import Modelo.Accidente.Eliminar;
 import Modelo.Accidente.Insertar;
@@ -22,7 +22,7 @@ public class GestionAccidentes extends javax.swing.JFrame {
      */
     public GestionAccidentes() {
         initComponents();
-        consultarAccidente consulta = new consultarAccidente();
+        consultaraccidentes consulta = new consultaraccidentes();
         consulta.mostrarAccidentes(jTable1);
         
     }
@@ -294,7 +294,7 @@ public class GestionAccidentes extends javax.swing.JFrame {
         if(!fecha.isEmpty() && !conductor.isEmpty() && !costo.isEmpty() && !Descripccion.isEmpty() && !placa.isEmpty()){
             Insertar insertar = new Insertar();
             insertar.Adicionar(fecha, conductorCc, placa, costofloat, Descripccion);
-            consultarAccidente consulta = new consultarAccidente();
+            consultaraccidentes consulta = new consultaraccidentes();
             consulta.mostrarAccidentes(jTable1);
             Limpiar();
         }else{
@@ -319,7 +319,7 @@ public class GestionAccidentes extends javax.swing.JFrame {
         
         Actualizar actualizar = new Actualizar();
         actualizar.Actualizar(Idint, fecha ,conductorCc ,placa , costofloat , Descripccion);
-        consultarAccidente consulta = new consultarAccidente();
+        consultaraccidentes consulta = new consultaraccidentes();
         consulta.mostrarAccidentes(jTable1);
         Limpiar();
         
@@ -334,7 +334,7 @@ public class GestionAccidentes extends javax.swing.JFrame {
         if(respuesta == 0){
         Eliminar eliminar = new Eliminar();
         eliminar.Eliminar(IntID);
-        consultarAccidente consulta = new consultarAccidente();
+        consultaraccidentes consulta = new consultaraccidentes();
         consulta.mostrarAccidentes(jTable1);
         Limpiar();
         }

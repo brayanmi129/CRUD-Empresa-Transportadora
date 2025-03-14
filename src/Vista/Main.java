@@ -6,6 +6,7 @@
 package Vista;
 
 import Controlador.Conexion;
+import Vista.Bulto.Bulto;
 
 /**
  *
@@ -44,7 +45,7 @@ public class Main extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setText("Gestion Transportes");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Conductores", "Camiones", "Viajes", "Conductores - Camiones Autorizados", "Accidentes" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Conductores", "Camiones", "Viajes", "Conductores - Camiones Autorizados", "Bulto", "Accidentes" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -120,7 +121,10 @@ public class Main extends javax.swing.JFrame {
     if ("Accidentes".equals(seleccion)) {
         GestionAccidentes gestionaccidentes = new GestionAccidentes();
         gestionaccidentes.setVisible(true);
-    } 
+    }else if("Conductores - Camiones Autorizados".equals(seleccion)){
+        ConductoresCamionesAutorizados gestionAutorizaciones = new ConductoresCamionesAutorizados();
+        gestionAutorizaciones.setVisible(true);
+    }
 
     // Cerrar la ventana actual
     this.dispose();
