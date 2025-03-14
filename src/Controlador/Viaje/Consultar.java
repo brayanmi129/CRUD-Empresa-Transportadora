@@ -25,7 +25,7 @@ public class Consultar {
         
         String sql = "SELECT * FROM Viaje";
         
-        String [] datos = new String[7];
+        String [] datos = new String[8];
         
         Statement st;
         try{
@@ -39,6 +39,7 @@ public class Consultar {
                 datos[4] = rs.getString(5);
                 datos[5] = rs.getString(6);
                 datos[6] = rs.getString(7);
+                datos[7] = rs.getString(8);
                 modelo.addRow(datos);
             }
             table.setModel(modelo);

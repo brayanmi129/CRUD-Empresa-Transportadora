@@ -225,11 +225,16 @@ public class Camion extends javax.swing.JFrame {
         Valor = form_camiones_valor.getText().toString();
         Aseguradora = form_camiones_aseguradora.getText().toString();
         km = form_camiones_km.getText().toString();
+        int kmint = Integer.parseInt(km);
         Chofer = form_camiones_chofer.getText().toString();
         
         if(!Placa.isEmpty() && !Marca.isEmpty() && !Modelo.isEmpty() && !Valor.isEmpty() && !Aseguradora.isEmpty() && !km.isEmpty() && !Chofer.isEmpty()){
-            Insertar insertar = new Insertar();
-            insertar.Adicionar(Placa, Marca, Modelo, Valor, Aseguradora, km, Chofer);
+            if(kmint>15000){
+                JOptionPane.showMessageDialog(null, "Este camión supera los 15000 kilometros. No se puede agirnar.");
+            }else{
+                Insertar insertar = new Insertar();
+                insertar.Adicionar(Placa, Marca, Modelo, Valor, Aseguradora, km, Chofer);
+            }
         }else{
             JOptionPane.showMessageDialog(null, "Todos los campos deben estar llenos.");
         }

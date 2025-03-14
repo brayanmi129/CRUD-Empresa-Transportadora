@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 public class ConsultarAutorizacion {  
     public void llenarComboBoxConductores(JComboBox<String> combox) {
         Conexion conexion = new Conexion();
-        String sql = "SELECT CC, (Nombre || ' ' || Apellidos) AS NombreCompleto FROM Chofer";
+        String sql = "SELECT CC, (Nombre || ' ' || Apellidos) AS NombreCompleto FROM Conductor";
         Statement st;
         try{
             st = conexion.establecerConexion().createStatement();
