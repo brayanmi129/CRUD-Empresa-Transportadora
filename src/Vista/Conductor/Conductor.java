@@ -9,6 +9,7 @@ import Controlador.Conductor.cConsultar;
 import Modelo.Conductor.cActualizar;
 import Modelo.Conductor.cEliminar;
 import Modelo.Conductor.cInsertar;
+import Vista.Main;
 import javax.swing.JOptionPane;
 
 /**
@@ -86,6 +87,11 @@ public class Conductor extends javax.swing.JFrame {
         });
 
         btnVolver.setText("Volver");
+        btnVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVolverActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("Cedula");
 
@@ -251,6 +257,13 @@ public class Conductor extends javax.swing.JFrame {
             Limpiar();
         }
     }//GEN-LAST:event_btnEliminarActionPerformed
+
+    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
+        // TODO add your handling code here:
+        Main main = new Main();
+        main.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnVolverActionPerformed
 
     /**
      * @param args the command line arguments

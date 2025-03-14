@@ -29,7 +29,7 @@ public class cConsultar {
         //Llevar los titulos a la tabla
         tblConductor.setModel(modelo);
         //Instruccion SQL
-        sql = "SELECT * FROM Conductor";
+        sql = "SELECT * FROM Chofer";
         //Vector para los registros}
         String [] datos = new String[5];
         //Variable tipo statement

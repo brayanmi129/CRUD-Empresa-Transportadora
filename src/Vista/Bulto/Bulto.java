@@ -9,6 +9,7 @@ import Controlador.Bulto.cConsultar;
 import Modelo.Bulto.cActualizar;
 import Modelo.Bulto.cEliminar;
 import Modelo.Bulto.cInsertar;
+import Vista.Main;
 import javax.swing.JOptionPane;
 
 /**
@@ -96,6 +97,11 @@ public class Bulto extends javax.swing.JFrame {
         });
 
         btnVolver.setText("Volver");
+        btnVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVolverActionPerformed(evt);
+            }
+        });
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel6.setText("Bultos");
@@ -255,6 +261,13 @@ public class Bulto extends javax.swing.JFrame {
         consulta.mostrarBultos(tblBulto);
         Limpiar();
     }//GEN-LAST:event_btnActualizarActionPerformed
+
+    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
+        // TODO add your handling code here:
+        Main main = new Main();
+        main.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnVolverActionPerformed
 
     /**
      * @param args the command line arguments
